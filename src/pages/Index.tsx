@@ -34,7 +34,7 @@ const Index = () => {
               </div>
               <div className="hidden lg:block relative h-full">
                 <img 
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop" 
+                  src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
                   alt="Contact Dhruba Saikia" 
                   className="w-full h-full object-cover"
                 />

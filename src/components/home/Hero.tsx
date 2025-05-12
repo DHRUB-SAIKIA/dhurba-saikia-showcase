@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ParallaxSection from "@/components/shared/ParallaxSection";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -91,7 +92,7 @@ const Hero = () => {
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop" 
+                  src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
                   alt="Dhruba Saikia - Designer and Developer" 
                   className="w-full h-full object-cover"
                 />
