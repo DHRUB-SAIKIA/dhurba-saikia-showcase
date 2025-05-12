@@ -91,11 +91,17 @@ const Hero = () => {
                   e.currentTarget.style.transform = "perspective(1000px) rotateY(-5deg) rotateX(5deg)";
                 }}
               >
-                <img 
-                  src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
-                  alt="Dhruba Saikia - Designer and Developer" 
-                  className="w-full h-full object-cover"
-                />
+                <div className="profile-image-container">
+                  <img 
+                    src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
+                    alt="Dhruba Saikia - Designer and Developer" 
+                    className="w-full h-full object-cover rounded-2xl"
+                    style={{
+                      boxShadow: "0 10px 30px -10px rgba(103, 71, 204, 0.3)",
+                      border: "3px solid rgba(155, 135, 245, 0.2)"
+                    }}
+                  />
+                </div>
               </div>
               <div className="absolute top-[-20px] right-[-20px] w-64 h-64 bg-primary-200 rounded-full opacity-70 blur-3xl -z-10 animate-pulse"></div>
               <div className="absolute bottom-[-30px] left-[-30px] w-72 h-72 bg-accent-200 rounded-full opacity-70 blur-3xl -z-10"></div>

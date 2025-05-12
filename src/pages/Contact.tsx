@@ -58,8 +58,8 @@ const Contact = () => {
                     <Mail className="h-6 w-6 mr-4 text-primary-600 flex-shrink-0" />
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <a href="mailto:hello@dhrubasaikia.com" className="text-muted-foreground hover:text-primary-600 transition-colors">
-                        hello@dhrubasaikia.com
+                      <a href="mailto:dhrubasaikia937@gmail.com" className="text-muted-foreground hover:text-primary-600 transition-colors">
+                        dhrubasaikia937@gmail.com
                       </a>
                     </div>
                   </li>
@@ -67,8 +67,8 @@ const Contact = () => {
                     <Phone className="h-6 w-6 mr-4 text-primary-600 flex-shrink-0" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary-600 transition-colors">
-                        +1 (555) 123-4567
+                      <a href="tel:+917002628759" className="text-muted-foreground hover:text-primary-600 transition-colors">
+                        +91 7002628759
                       </a>
                     </div>
                   </li>
@@ -77,7 +77,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium">Location</h3>
                       <p className="text-muted-foreground">
-                        123 Design Street, Creative City, 12345
+                        Tezpur, Assam, India
                       </p>
                     </div>
                   </li>

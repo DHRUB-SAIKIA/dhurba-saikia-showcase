@@ -37,7 +37,11 @@ const Index = () => {
                   src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
                   alt="Contact Dhruba Saikia" 
                   className="w-full h-full object-cover"
+                  style={{
+                    boxShadow: "inset 0 0 0 3px rgba(255, 255, 255, 0.1)"
+                  }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/50 to-transparent"></div>
               </div>
             </div>
           </div>

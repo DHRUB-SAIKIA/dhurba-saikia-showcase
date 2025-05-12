@@ -97,15 +97,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5 text-primary-600" />
-                <span className="text-muted-foreground">123 Design Street, Creative City, 12345</span>
+                <span className="text-muted-foreground">Tezpur, Assam, India</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary-600" />
-                <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary-600 transition-colors">+1 (555) 123-4567</a>
+                <a href="tel:+917002628759" className="text-muted-foreground hover:text-primary-600 transition-colors">+91 7002628759</a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary-600" />
-                <a href="mailto:hello@dhrubasaikia.com" className="text-muted-foreground hover:text-primary-600 transition-colors">hello@dhrubasaikia.com</a>
+                <a href="mailto:dhrubasaikia937@gmail.com" className="text-muted-foreground hover:text-primary-600 transition-colors">dhrubasaikia937@gmail.com</a>
               </li>
             </ul>
           </div>
