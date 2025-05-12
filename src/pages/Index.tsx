@@ -1,13 +1,49 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import Hero from "@/components/home/Hero";
+import Services from "@/components/home/Services";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
+import Testimonials from "@/components/home/Testimonials";
+import ContactForm from "@/components/shared/ContactForm";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main>
+      <Hero />
+      <Services />
+      <FeaturedProjects />
+      <Testimonials />
+      
+      {/* Contact CTA Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="bg-primary-600 text-white rounded-3xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-8 md:p-12 lg:p-16">
+                <h2 className="heading-lg mb-4">Let's Work Together</h2>
+                <p className="text-white/80 text-lg mb-8">
+                  Have a project in mind? Let's discuss how we can bring your vision to life.
+                </p>
+                <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
+                  <Link to="/contact">
+                    Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="hidden lg:block relative h-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop" 
+                  alt="Contact Dhruba Saikia" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 
