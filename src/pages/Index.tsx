@@ -7,6 +7,7 @@ import ContactForm from "@/components/shared/ContactForm";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
@@ -32,16 +33,18 @@ const Index = () => {
                   </Link>
                 </Button>
               </div>
-              <div className="hidden lg:block relative h-full">
-                <img 
-                  src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
-                  alt="Contact Dhruba Saikia" 
-                  className="w-full h-full object-cover"
-                  style={{
-                    boxShadow: "inset 0 0 0 3px rgba(255, 255, 255, 0.1)"
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/50 to-transparent"></div>
+              <div className="hidden lg:flex relative h-full items-center justify-center p-8">
+                <div className="relative z-10">
+                  <Avatar className="w-48 h-48 border-4 border-white/20">
+                    <AvatarImage 
+                      src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
+                      alt="Dhruba Saikia"
+                      className="object-cover object-center"
+                    />
+                    <AvatarFallback>DS</AvatarFallback>
+                  </Avatar>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/90 to-primary-600/50"></div>
               </div>
             </div>
           </div>

@@ -66,45 +66,23 @@ const Hero = () => {
             </div>
           </div>
           
-          <div ref={imageRef} className="order-1 lg:order-2 animate-fade-in perspective-wrapper">
+          <div ref={imageRef} className="order-1 lg:order-2 animate-fade-in perspective-wrapper flex justify-center">
             <div className="relative">
               <div 
-                className="relative z-10 rounded-2xl overflow-hidden shadow-2xl card-3d"
+                className="relative z-10 overflow-hidden shadow-2xl rounded-full w-64 h-64 mx-auto"
                 style={{ 
-                  transform: "perspective(1000px) rotateY(-5deg) rotateX(5deg)",
-                  transition: "transform 0.5s ease-out"
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  
-                  const tiltX = ((y - centerY) / centerY) * -7;
-                  const tiltY = ((x - centerX) / centerX) * 7;
-                  
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "perspective(1000px) rotateY(-5deg) rotateX(5deg)";
+                  boxShadow: "0 10px 30px -10px rgba(103, 71, 204, 0.3)",
+                  border: "4px solid rgba(155, 135, 245, 0.2)"
                 }}
               >
-                <div className="profile-image-container">
-                  <img 
-                    src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
-                    alt="Dhruba Saikia - Designer and Developer" 
-                    className="w-full h-full object-cover rounded-2xl"
-                    style={{
-                      boxShadow: "0 10px 30px -10px rgba(103, 71, 204, 0.3)",
-                      border: "3px solid rgba(155, 135, 245, 0.2)"
-                    }}
-                  />
-                </div>
+                <img 
+                  src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
+                  alt="Dhruba Saikia - Designer and Developer" 
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
-              <div className="absolute top-[-20px] right-[-20px] w-64 h-64 bg-primary-200 rounded-full opacity-70 blur-3xl -z-10 animate-pulse"></div>
-              <div className="absolute bottom-[-30px] left-[-30px] w-72 h-72 bg-accent-200 rounded-full opacity-70 blur-3xl -z-10"></div>
+              <div className="absolute top-[-20px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-70 blur-3xl -z-10 animate-pulse"></div>
+              <div className="absolute bottom-[-30px] left-[-30px] w-56 h-56 bg-accent-200 rounded-full opacity-70 blur-3xl -z-10"></div>
             </div>
           </div>
         </div>
