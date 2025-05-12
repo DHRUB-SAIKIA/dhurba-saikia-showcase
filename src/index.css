@@ -179,11 +179,13 @@
 
   /* Back to Top Button */
   .back-to-top {
-    @apply fixed bottom-6 right-6 bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300;
+    @apply fixed bottom-6 right-6 bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 transition-all duration-300;
+    visibility: hidden;
   }
 
   .back-to-top.visible {
-    @apply opacity-100 visible;
+    opacity: 1;
+    visibility: visible;
   }
 
   /* Perspective wrapper for 3D effects */

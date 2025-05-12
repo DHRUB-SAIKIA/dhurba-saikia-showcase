@@ -12,6 +12,11 @@ interface ProjectCardProps {
   className?: string;
 }
 
+interface TiltStyle {
+  transform: string;
+  transition?: string;
+}
+
 const ProjectCard = ({ 
   image, 
   title, 
@@ -20,7 +25,7 @@ const ProjectCard = ({
   featured = false,
   className 
 }: ProjectCardProps) => {
-  const [tiltStyle, setTiltStyle] = useState({
+  const [tiltStyle, setTiltStyle] = useState<TiltStyle>({
     transform: "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)",
   });
 
