@@ -1,5 +1,5 @@
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ParallaxSection from "@/components/shared/ParallaxSection";
@@ -11,6 +11,7 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   // Add scroll effect
   useEffect(() => {
@@ -26,6 +27,31 @@ const Hero = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Add 3D effect for profile picture
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!imageRef.current) return;
+      
+      // Get container dimensions
+      const container = imageRef.current;
+      const rect = container.getBoundingClientRect();
+      
+      // Calculate mouse position relative to the center of the container
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      // Calculate rotation based on mouse distance from center
+      // Limit rotation to a reasonable amount (15 degrees)
+      const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 10;
+      const rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 10;
+      
+      setRotation({ x: rotateX, y: rotateY });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
@@ -93,22 +119,56 @@ const Hero = () => {
           </div>
           
           <div ref={imageRef} className="order-1 lg:order-2 animate-fade-in perspective-wrapper flex justify-center">
-            <div className="relative">
-              <div 
-                className="relative z-10 overflow-hidden shadow-2xl rounded-full w-64 h-64 mx-auto"
-                style={{ 
-                  boxShadow: "0 10px 30px -10px rgba(103, 71, 204, 0.3)",
-                  border: "4px solid rgba(155, 135, 245, 0.2)"
-                }}
-              >
-                <img 
-                  src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
-                  alt="Dhruba Saikia - Designer and Developer" 
-                  className="w-full h-full object-cover object-center"
-                />
+            <div 
+              className="relative"
+              style={{ 
+                transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+                transition: 'transform 0.2s ease-out'
+              }}
+            >
+              <div className="w-64 h-64 relative">
+                {/* 3D Animation Layers */}
+                <div className="absolute inset-0 bg-primary-100 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+                <div className="absolute inset-2 bg-accent-100 rounded-full blur-xl opacity-30 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                
+                {/* Main Profile Image */}
+                <div 
+                  className="absolute inset-0 z-10 overflow-hidden rounded-full shadow-2xl"
+                  style={{ 
+                    boxShadow: "0 10px 30px -5px rgba(103, 71, 204, 0.4)",
+                    border: "4px solid rgba(155, 135, 245, 0.3)"
+                  }}
+                >
+                  <img 
+                    src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                    alt="Dhruba Saikia - Designer and Developer" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                  
+                  {/* Glass Reflection Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-20"></div>
+                </div>
+                
+                {/* Decorative Elements */}
+                <div className="absolute top-[-30px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-50 blur-3xl -z-10 animate-pulse"></div>
+                <div className="absolute bottom-[-40px] left-[-30px] w-56 h-56 bg-accent-200 rounded-full opacity-50 blur-3xl -z-10" style={{animationDelay: '0.7s'}}></div>
+                
+                {/* 3D Floating Elements */}
+                <div 
+                  className="absolute w-10 h-10 bg-primary-500 rounded-full top-10 left-0 z-20 opacity-80"
+                  style={{ 
+                    transform: `translateZ(40px) translateX(${Math.sin(Date.now() * 0.001) * 10}px)`,
+                    animation: 'float 6s ease-in-out infinite'
+                  }}
+                ></div>
+                <div 
+                  className="absolute w-6 h-6 bg-accent-500 rounded-full bottom-5 right-5 z-20 opacity-80"
+                  style={{ 
+                    transform: `translateZ(60px) translateY(${Math.cos(Date.now() * 0.002) * 10}px)`,
+                    animation: 'float 8s ease-in-out infinite reverse'
+                  }}
+                ></div>
               </div>
-              <div className="absolute top-[-20px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-70 blur-3xl -z-10 animate-pulse"></div>
-              <div className="absolute bottom-[-30px] left-[-30px] w-56 h-56 bg-accent-200 rounded-full opacity-70 blur-3xl -z-10"></div>
             </div>
           </div>
         </div>

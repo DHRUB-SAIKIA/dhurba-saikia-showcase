@@ -57,17 +57,26 @@ const Index = () => {
                 </HoverCard>
               </div>
               <div className="hidden lg:flex relative h-full items-center justify-center p-8">
-                <div className="relative z-10">
-                  <Avatar className="w-48 h-48 border-4 border-white/20">
-                    <AvatarImage 
-                      src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
-                      alt="Dhruba Saikia"
-                      className="object-cover object-center"
-                    />
-                    <AvatarFallback>DS</AvatarFallback>
-                  </Avatar>
+                <div className="relative z-10 perspective-wrapper">
+                  <div 
+                    className="relative transform transition-all duration-300 hover:scale-105"
+                    style={{
+                      transform: "perspective(1000px) rotateY(-15deg) rotateX(5deg)",
+                      transformStyle: "preserve-3d"
+                    }}
+                  >
+                    <Avatar className="w-48 h-48 border-4 border-white/20 shadow-xl">
+                      <AvatarImage 
+                        src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                        alt="Dhruba Saikia"
+                        className="object-cover object-center"
+                      />
+                      <AvatarFallback>DS</AvatarFallback>
+                    </Avatar>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary-400/20 to-transparent rounded-full"></div>
+                  </div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary-600/90 to-primary-600/50 -z-10 rounded-full blur-xl opacity-70"></div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/90 to-primary-600/50"></div>
               </div>
             </div>
           </div>
