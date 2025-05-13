@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const Index = () => {
   return (
@@ -27,17 +28,39 @@ const Index = () => {
                 <p className="text-white/80 text-lg mb-8">
                   Have a project in mind? Let's discuss how we can bring your vision to life.
                 </p>
-                <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
-                  <Link to="/contact">
-                    Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
+                      <Link to="/contact" className="flex items-center">
+                        Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-80 p-0 overflow-hidden rounded-lg border-2 border-primary-200">
+                    <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4">
+                      <div className="flex items-center gap-3">
+                        <Avatar className="h-12 w-12 border-2 border-primary-200">
+                          <AvatarImage 
+                            src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                            alt="Dhruba Saikia" 
+                            className="object-cover object-center"
+                          />
+                          <AvatarFallback>DS</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <h3 className="font-medium text-primary-800">Hey, I'm Dhruba!</h3>
+                          <p className="text-sm text-primary-600">How can I help you today?</p>
+                        </div>
+                      </div>
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
               </div>
               <div className="hidden lg:flex relative h-full items-center justify-center p-8">
                 <div className="relative z-10">
                   <Avatar className="w-48 h-48 border-4 border-white/20">
                     <AvatarImage 
-                      src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
+                      src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                       alt="Dhruba Saikia"
                       className="object-cover object-center"
                     />

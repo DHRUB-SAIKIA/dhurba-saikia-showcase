@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ParallaxSection from "@/components/shared/ParallaxSection";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { UserRound } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -42,9 +44,33 @@ const Hero = () => {
               I'm Dhruba Saikia, a multidisciplinary designer and developer creating beautiful, functional digital experiences.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="rounded-full px-8 hover-scale">
-                <Link to="/portfolio">View My Work</Link>
-              </Button>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <Button asChild size="lg" className="rounded-full px-8 hover-scale">
+                    <Link to="/portfolio" className="flex items-center gap-1">
+                      View My Work
+                    </Link>
+                  </Button>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80 p-0 overflow-hidden rounded-lg border-2 border-primary-200">
+                  <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4">
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-12 w-12 border-2 border-primary-200">
+                        <AvatarImage 
+                          src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                          alt="Dhruba Saikia" 
+                          className="object-cover object-center"
+                        />
+                        <AvatarFallback>DS</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h3 className="font-medium text-primary-800">Hey, I'm Dhruba!</h3>
+                        <p className="text-sm text-primary-600">How can I help you today?</p>
+                      </div>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 hover-scale">
                 <Link to="/contact">Let's Talk</Link>
               </Button>
@@ -76,7 +102,7 @@ const Hero = () => {
                 }}
               >
                 <img 
-                  src="/lovable-uploads/5051cee0-29db-486a-aa93-541b1d105e41.png" 
+                  src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                   alt="Dhruba Saikia - Designer and Developer" 
                   className="w-full h-full object-cover object-center"
                 />
