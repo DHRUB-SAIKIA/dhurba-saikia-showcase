@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -158,12 +157,9 @@ const Hero = () => {
                 )}
               </div>
               
-              {/* Main Profile Image - Adjusted Position */}
+              {/* Main Profile Image - Properly positioned inside circle */}
               <div 
-                className="absolute inset-0 z-10 overflow-hidden"
-                style={{
-                  transform: "translate(0, 30px) scale(1.6)",
-                }}
+                className="absolute inset-0 z-10 overflow-hidden rounded-full"
               >
                 <img 
                   src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 

@@ -1,4 +1,3 @@
-
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
@@ -75,13 +74,7 @@ const Index = () => {
                       transformStyle: "preserve-3d"
                     }}
                   >
-                    {/* Centered image positioned with the face properly visible */}
-                    <div 
-                      className="absolute inset-0"
-                      style={{
-                        transform: "translate(0, 30px) scale(1.6)",
-                      }}
-                    >
+                    <div className="absolute inset-0">
                       <img 
                         src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                         alt="Dhruba Saikia"
@@ -89,7 +82,6 @@ const Index = () => {
                       />
                     </div>
                     
-                    {/* Message on Hover */}
                     {isHovering && (
                       <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-20 transition-opacity duration-300">
                         <div className="text-white text-center p-4">
@@ -99,7 +91,6 @@ const Index = () => {
                       </div>
                     )}
                     
-                    {/* Glass Reflection Effect */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-10"></div>
                   </div>
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary-600/90 to-primary-600/50 -z-10 rounded-full blur-xl opacity-70"></div>
