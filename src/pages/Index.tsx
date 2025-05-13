@@ -75,11 +75,11 @@ const Index = () => {
                       transformStyle: "preserve-3d"
                     }}
                   >
-                    {/* Half-cropped image positioned to the left */}
+                    {/* Centered image positioned with the face properly visible */}
                     <div 
                       className="absolute inset-0"
                       style={{
-                        transform: "translateX(-20px) translateY(30px) scale(1.6)",
+                        transform: "translate(0, 30px) scale(1.6)",
                       }}
                     >
                       <img 

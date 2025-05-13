@@ -131,8 +131,7 @@ const Hero = () => {
                 transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
                 transition: 'transform 0.2s ease-out',
                 width: '280px',
-                height: '280px',
-                marginLeft: '-30px'
+                height: '280px'
               }}
             >
               {/* 3D Animation Layers */}
@@ -163,7 +162,7 @@ const Hero = () => {
               <div 
                 className="absolute inset-0 z-10 overflow-hidden"
                 style={{
-                  transform: "translateX(-20px) translateY(30px) scale(1.6)",
+                  transform: "translate(0, 30px) scale(1.6)",
                 }}
               >
                 <img 
