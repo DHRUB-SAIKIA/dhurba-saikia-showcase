@@ -9,8 +9,11 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { useState } from "react";
 
 const Index = () => {
+  const [isHovering, setIsHovering] = useState(false);
+  
   return (
     <main>
       <Hero />
@@ -43,7 +46,7 @@ const Index = () => {
                           <AvatarImage 
                             src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                             alt="Dhruba Saikia" 
-                            className="object-cover object-center"
+                            className="object-cover object-top"
                           />
                           <AvatarFallback>DS</AvatarFallback>
                         </Avatar>
@@ -57,23 +60,47 @@ const Index = () => {
                 </HoverCard>
               </div>
               <div className="hidden lg:flex relative h-full items-center justify-center p-8">
-                <div className="relative z-10 perspective-wrapper">
+                <div 
+                  className="relative z-10 perspective-wrapper"
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                >
                   <div 
-                    className="relative transform transition-all duration-300 hover:scale-105"
+                    className="relative h-48 w-48 rounded-full"
                     style={{
+                      boxShadow: "0 10px 30px -5px rgba(103, 71, 204, 0.4)",
+                      border: "4px solid rgba(255, 255, 255, 0.3)",
+                      overflow: "hidden",
                       transform: "perspective(1000px) rotateY(-15deg) rotateX(5deg)",
                       transformStyle: "preserve-3d"
                     }}
                   >
-                    <Avatar className="w-48 h-48 border-4 border-white/20 shadow-xl">
-                      <AvatarImage 
+                    {/* Half-cropped image positioned to the left */}
+                    <div 
+                      className="absolute inset-0"
+                      style={{
+                        transform: "translateX(-20px) translateY(30px) scale(1.6)",
+                      }}
+                    >
+                      <img 
                         src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                         alt="Dhruba Saikia"
-                        className="object-cover object-center"
+                        className="w-full h-full object-cover object-top"
                       />
-                      <AvatarFallback>DS</AvatarFallback>
-                    </Avatar>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary-400/20 to-transparent rounded-full"></div>
+                    </div>
+                    
+                    {/* Message on Hover */}
+                    {isHovering && (
+                      <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-20 transition-opacity duration-300">
+                        <div className="text-white text-center p-4">
+                          <p className="font-medium text-lg">Hey, I'm Dhruba!</p>
+                          <p className="text-sm text-white/80">How can I help you today?</p>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Glass Reflection Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-10"></div>
                   </div>
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary-600/90 to-primary-600/50 -z-10 rounded-full blur-xl opacity-70"></div>
                 </div>

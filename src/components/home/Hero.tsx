@@ -12,6 +12,7 @@ const Hero = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   // Add scroll effect
   useEffect(() => {
@@ -85,7 +86,7 @@ const Hero = () => {
                         <AvatarImage 
                           src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                           alt="Dhruba Saikia" 
-                          className="object-cover object-center"
+                          className="object-cover object-top"
                         />
                         <AvatarFallback>DS</AvatarFallback>
                       </Avatar>
@@ -118,57 +119,82 @@ const Hero = () => {
             </div>
           </div>
           
-          <div ref={imageRef} className="order-1 lg:order-2 animate-fade-in perspective-wrapper flex justify-center">
+          <div 
+            ref={imageRef} 
+            className="order-1 lg:order-2 animate-fade-in perspective-wrapper flex justify-center"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
             <div 
-              className="relative"
+              className="relative profile-container"
               style={{ 
                 transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-                transition: 'transform 0.2s ease-out'
+                transition: 'transform 0.2s ease-out',
+                width: '280px',
+                height: '280px',
+                marginLeft: '-30px'
               }}
             >
-              <div className="w-64 h-64 relative">
-                {/* 3D Animation Layers */}
-                <div className="absolute inset-0 bg-primary-100 rounded-full blur-2xl opacity-40 animate-pulse"></div>
-                <div className="absolute inset-2 bg-accent-100 rounded-full blur-xl opacity-30 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                
-                {/* Main Profile Image */}
-                <div 
-                  className="absolute inset-0 z-10 overflow-hidden rounded-full shadow-2xl"
-                  style={{ 
-                    boxShadow: "0 10px 30px -5px rgba(103, 71, 204, 0.4)",
-                    border: "4px solid rgba(155, 135, 245, 0.3)"
-                  }}
-                >
-                  <img 
-                    src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
-                    alt="Dhruba Saikia - Designer and Developer" 
-                    className="w-full h-full object-cover object-center"
-                  />
-                  
-                  {/* Glass Reflection Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-20"></div>
-                </div>
-                
-                {/* Decorative Elements */}
-                <div className="absolute top-[-30px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-50 blur-3xl -z-10 animate-pulse"></div>
-                <div className="absolute bottom-[-40px] left-[-30px] w-56 h-56 bg-accent-200 rounded-full opacity-50 blur-3xl -z-10" style={{animationDelay: '0.7s'}}></div>
-                
-                {/* 3D Floating Elements */}
-                <div 
-                  className="absolute w-10 h-10 bg-primary-500 rounded-full top-10 left-0 z-20 opacity-80"
-                  style={{ 
-                    transform: `translateZ(40px) translateX(${Math.sin(Date.now() * 0.001) * 10}px)`,
-                    animation: 'float 6s ease-in-out infinite'
-                  }}
-                ></div>
-                <div 
-                  className="absolute w-6 h-6 bg-accent-500 rounded-full bottom-5 right-5 z-20 opacity-80"
-                  style={{ 
-                    transform: `translateZ(60px) translateY(${Math.cos(Date.now() * 0.002) * 10}px)`,
-                    animation: 'float 8s ease-in-out infinite reverse'
-                  }}
-                ></div>
+              {/* 3D Animation Layers */}
+              <div className="absolute inset-0 bg-primary-100 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+              <div className="absolute inset-2 bg-accent-100 rounded-full blur-xl opacity-30 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              
+              {/* Circle Frame */}
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{ 
+                  boxShadow: "0 10px 30px -5px rgba(103, 71, 204, 0.4)",
+                  border: "4px solid rgba(155, 135, 245, 0.3)",
+                  overflow: "hidden"
+                }}
+              >
+                {/* Message Popup on Hover */}
+                {isHovering && (
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-20 transition-opacity duration-300">
+                    <div className="text-white text-center p-4">
+                      <p className="font-medium text-lg">Hey, I'm Dhruba!</p>
+                      <p className="text-sm text-white/80">How can I help you today?</p>
+                    </div>
+                  </div>
+                )}
               </div>
+              
+              {/* Main Profile Image - Adjusted Position */}
+              <div 
+                className="absolute inset-0 z-10 overflow-hidden"
+                style={{
+                  transform: "translateX(-20px) translateY(30px) scale(1.6)",
+                }}
+              >
+                <img 
+                  src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                  alt="Dhruba Saikia - Designer and Developer" 
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              
+              {/* Glass Reflection Effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-15 rounded-full"></div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute top-[-30px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-50 blur-3xl -z-10 animate-pulse"></div>
+              <div className="absolute bottom-[-40px] left-[-30px] w-56 h-56 bg-accent-200 rounded-full opacity-50 blur-3xl -z-10" style={{animationDelay: '0.7s'}}></div>
+              
+              {/* 3D Floating Elements */}
+              <div 
+                className="absolute w-10 h-10 bg-primary-500 rounded-full top-10 left-0 z-20 opacity-80"
+                style={{ 
+                  transform: `translateZ(40px) translateX(${Math.sin(Date.now() * 0.001) * 10}px)`,
+                  animation: 'float 6s ease-in-out infinite'
+                }}
+              ></div>
+              <div 
+                className="absolute w-6 h-6 bg-accent-500 rounded-full bottom-5 right-5 z-20 opacity-80"
+                style={{ 
+                  transform: `translateZ(60px) translateY(${Math.cos(Date.now() * 0.002) * 10}px)`,
+                  animation: 'float 8s ease-in-out infinite reverse'
+                }}
+              ></div>
             </div>
           </div>
         </div>
