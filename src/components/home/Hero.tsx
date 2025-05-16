@@ -10,7 +10,6 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
   // Add scroll effect
@@ -27,31 +26,6 @@ const Hero = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Add 3D effect for profile picture
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!imageRef.current) return;
-      
-      // Get container dimensions
-      const container = imageRef.current;
-      const rect = container.getBoundingClientRect();
-      
-      // Calculate mouse position relative to the center of the container
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      
-      // Calculate rotation based on mouse distance from center
-      // Limit rotation to a reasonable amount (15 degrees)
-      const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 10;
-      const rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 10;
-      
-      setRotation({ x: rotateX, y: rotateY });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
@@ -120,20 +94,12 @@ const Hero = () => {
           
           <div 
             ref={imageRef} 
-            className="order-1 lg:order-2 animate-fade-in perspective-wrapper flex justify-center"
+            className="order-1 lg:order-2 animate-fade-in flex justify-center"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <div 
-              className="relative profile-container"
-              style={{ 
-                transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-                transition: 'transform 0.2s ease-out',
-                width: '280px',
-                height: '280px'
-              }}
-            >
-              {/* 3D Animation Layers */}
+            <div className="relative profile-container" style={{ width: '280px', height: '280px' }}>
+              {/* Background Glow Effect */}
               <div className="absolute inset-0 bg-primary-100 rounded-full blur-2xl opacity-40 animate-pulse"></div>
               <div className="absolute inset-2 bg-accent-100 rounded-full blur-xl opacity-30 animate-pulse" style={{animationDelay: '0.5s'}}></div>
               
@@ -157,12 +123,12 @@ const Hero = () => {
                 )}
               </div>
               
-              {/* Main Profile Image - Fixed positioning to be centered in circle */}
+              {/* Profile Image - Centered properly */}
               <div className="absolute inset-0 z-10 overflow-hidden rounded-full">
                 <img 
                   src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                   alt="Dhruba Saikia - Designer and Developer" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               
@@ -172,22 +138,6 @@ const Hero = () => {
               {/* Decorative Elements */}
               <div className="absolute top-[-30px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-50 blur-3xl -z-10 animate-pulse"></div>
               <div className="absolute bottom-[-40px] left-[-30px] w-56 h-56 bg-accent-200 rounded-full opacity-50 blur-3xl -z-10" style={{animationDelay: '0.7s'}}></div>
-              
-              {/* 3D Floating Elements */}
-              <div 
-                className="absolute w-10 h-10 bg-primary-500 rounded-full top-10 left-0 z-20 opacity-80"
-                style={{ 
-                  transform: `translateZ(40px) translateX(${Math.sin(Date.now() * 0.001) * 10}px)`,
-                  animation: 'float 6s ease-in-out infinite'
-                }}
-              ></div>
-              <div 
-                className="absolute w-6 h-6 bg-accent-500 rounded-full bottom-5 right-5 z-20 opacity-80"
-                style={{ 
-                  transform: `translateZ(60px) translateY(${Math.cos(Date.now() * 0.002) * 10}px)`,
-                  animation: 'float 8s ease-in-out infinite reverse'
-                }}
-              ></div>
             </div>
           </div>
         </div>

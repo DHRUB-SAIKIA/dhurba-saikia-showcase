@@ -46,7 +46,7 @@ const Index = () => {
                           <AvatarImage 
                             src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                             alt="Dhruba Saikia" 
-                            className="object-cover"
+                            className="object-cover object-center"
                           />
                           <AvatarFallback>DS</AvatarFallback>
                         </Avatar>
@@ -61,7 +61,7 @@ const Index = () => {
               </div>
               <div className="hidden lg:flex relative h-full items-center justify-center p-8">
                 <div 
-                  className="relative z-10 perspective-wrapper"
+                  className="relative z-10"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                 >
@@ -70,16 +70,14 @@ const Index = () => {
                     style={{
                       boxShadow: "0 10px 30px -5px rgba(103, 71, 204, 0.4)",
                       border: "4px solid rgba(255, 255, 255, 0.3)",
-                      overflow: "hidden",
-                      transform: "perspective(1000px) rotateY(-15deg) rotateX(5deg)",
-                      transformStyle: "preserve-3d"
+                      overflow: "hidden"
                     }}
                   >
                     <div className="absolute inset-0">
                       <img 
                         src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                         alt="Dhruba Saikia"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                       />
                     </div>
                     
