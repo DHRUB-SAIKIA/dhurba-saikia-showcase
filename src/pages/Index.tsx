@@ -46,7 +46,7 @@ const Index = () => {
                           <AvatarImage 
                             src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                             alt="Dhruba Saikia" 
-                            className="object-cover object-center"
+                            className="object-cover"
                           />
                           <AvatarFallback>DS</AvatarFallback>
                         </Avatar>
@@ -78,11 +78,11 @@ const Index = () => {
                       overflow: "hidden"
                     }}
                   >
-                    <div className="absolute inset-0">
+                    <div className="absolute inset-0 flex items-center justify-center">
                       <img 
                         src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                         alt="Dhruba Saikia"
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     

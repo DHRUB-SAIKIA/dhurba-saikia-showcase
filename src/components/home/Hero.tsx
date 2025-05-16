@@ -134,12 +134,14 @@ const Hero = () => {
                   </div>
                 )}
                 
-                {/* Profile Image - Properly centered */}
-                <img 
-                  src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
-                  alt="Dhruba Saikia - Designer and Developer" 
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                />
+                {/* Profile Image - Fixed for perfect centering */}
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                    alt="Dhruba Saikia - Designer and Developer" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 
                 {/* Glass Reflection Effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-10 rounded-full"></div>
