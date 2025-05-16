@@ -121,19 +121,17 @@ const Hero = () => {
                     </div>
                   </div>
                 )}
-              </div>
-              
-              {/* Profile Image - Centered properly */}
-              <div className="absolute inset-0 z-10 overflow-hidden rounded-full">
+                
+                {/* Profile Image - Properly centered */}
                 <img 
                   src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                   alt="Dhruba Saikia - Designer and Developer" 
-                  className="w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                 />
+                
+                {/* Glass Reflection Effect */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-10 rounded-full"></div>
               </div>
-              
-              {/* Glass Reflection Effect */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-15 rounded-full"></div>
               
               {/* Decorative Elements */}
               <div className="absolute top-[-30px] right-[-20px] w-48 h-48 bg-primary-200 rounded-full opacity-50 blur-3xl -z-10 animate-pulse"></div>
