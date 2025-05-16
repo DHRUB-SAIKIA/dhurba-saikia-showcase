@@ -65,6 +65,11 @@ const Index = () => {
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                 >
+                  {/* Decorative Circles - Smaller versions for CTA section */}
+                  <div className="absolute -top-6 -right-4 w-8 h-8 bg-primary-300/50 rounded-full opacity-70 animate-bounce" style={{animationDuration: '6s'}}></div>
+                  <div className="absolute -bottom-5 -left-6 w-10 h-10 bg-accent-200/50 rounded-full opacity-60 animate-pulse" style={{animationDuration: '4s'}}></div>
+                  <div className="absolute top-6 -left-8 w-6 h-6 bg-secondary-200/50 rounded-full opacity-60 animate-pulse" style={{animationDuration: '7s'}}></div>
+
                   <div 
                     className="relative h-48 w-48 rounded-full"
                     style={{
@@ -92,6 +97,10 @@ const Index = () => {
                     
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-60 z-10"></div>
                   </div>
+                  
+                  {/* Decorative Ring */}
+                  <div className="absolute -inset-3 border border-dashed border-white/30 rounded-full opacity-40 animate-spin" style={{animationDuration: '15s'}}></div>
+                  
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary-600/90 to-primary-600/50 -z-10 rounded-full blur-xl opacity-70"></div>
                 </div>
               </div>
