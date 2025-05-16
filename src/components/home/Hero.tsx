@@ -157,14 +157,12 @@ const Hero = () => {
                 )}
               </div>
               
-              {/* Main Profile Image - Properly positioned inside circle */}
-              <div 
-                className="absolute inset-0 z-10 overflow-hidden rounded-full"
-              >
+              {/* Main Profile Image - Fixed positioning to be centered in circle */}
+              <div className="absolute inset-0 z-10 overflow-hidden rounded-full">
                 <img 
                   src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                   alt="Dhruba Saikia - Designer and Developer" 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
                 />
               </div>
               

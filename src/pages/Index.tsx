@@ -1,3 +1,4 @@
+
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
@@ -45,7 +46,7 @@ const Index = () => {
                           <AvatarImage 
                             src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                             alt="Dhruba Saikia" 
-                            className="object-cover object-top"
+                            className="object-cover"
                           />
                           <AvatarFallback>DS</AvatarFallback>
                         </Avatar>
@@ -78,7 +79,7 @@ const Index = () => {
                       <img 
                         src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
                         alt="Dhruba Saikia"
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     
