@@ -1,5 +1,5 @@
 
-import { Code, FileCode, Monitor, Smartphone, Palette, Brush } from "lucide-react";
+import { Code, Smartphone, Monitor, Palette, Brush } from "lucide-react";
 import SkillIcon from "./SkillIcon";
 import AnimatedText from "@/components/shared/AnimatedText";
 
@@ -10,56 +10,69 @@ const SpecialiseGrid = () => {
       <div className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-6 mt-2">
         {/* Web Development */}
         <SkillIcon 
-          icon={<FileCode />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" 
+              alt="HTML icon" 
+              className="h-6 w-6"
+            />
+          }
           label="HTML" 
           variant="primary"
-        />
-        
-        <SkillIcon 
-          icon={<Code />}
-          label="CSS" 
-          variant="primary"
+          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-badge-js">
-              <path stroke="currentColor" d="M12 19.15L4.8 8.4 12 4.5l7.2 3.9z" />
-              <path stroke="currentColor" d="M12 19.15v-4.6" />
-              <path stroke="currentColor" d="M9 15.5l3 -1v0.05" />
-              <path stroke="currentColor" d="M15 15.5l-3 -1v0.05" />
-              <path stroke="currentColor" d="M12 4.5v4.1" />
-              <path stroke="currentColor" d="M9 9.65l3 -1v0.05" />
-              <path stroke="currentColor" d="M15 9.65l-3 -1v0.05" />
-            </svg>
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/732/732190.png" 
+              alt="CSS icon" 
+              className="h-6 w-6"
+            />
+          }
+          label="CSS" 
+          variant="primary"
+          iconClassName="h-6 w-6"
+        />
+        
+        <SkillIcon 
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" 
+              alt="JavaScript icon" 
+              className="h-6 w-6"
+            />
           }
           label="JavaScript" 
           variant="primary"
+          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" />
-              <circle cx="12" cy="12" r="3" stroke="currentColor" />
-            </svg>
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" 
+              alt="React icon" 
+              className="h-6 w-6"
+            />
           }
           label="React" 
           variant="primary"
+          iconClassName="h-6 w-6"
         />
         
         {/* App Development */}
         <SkillIcon 
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="currentColor" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3" />
-              <path stroke="currentColor" d="M12 12l8-4.5" />
-              <path stroke="currentColor" d="M12 12v9" />
-              <path stroke="currentColor" d="M12 12L4 7.5" />
-            </svg>
+            <img 
+              src="https://storage.googleapis.com/cms-storage-bucket/a9d6ce81aee44ae017ee.png" 
+              alt="Flutter icon" 
+              className="h-6 w-6"
+            />
           }
           label="Flutter" 
           variant="accent"
+          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
@@ -86,15 +99,15 @@ const SpecialiseGrid = () => {
         {/* UI/UX Design */}
         <SkillIcon 
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="currentColor" d="M5 5.5A2.5 2.5 0 0 1 7.5 3H12v7H7.5A2.5 2.5 0 0 1 5 7.5v-2z" />
-              <path stroke="currentColor" d="M12 3h4.5A2.5 2.5 0 0 1 19 5.5v2a2.5 2.5 0 0 1-2.5 2.5H12V3z" />
-              <path stroke="currentColor" d="M12 10v11" />
-              <path stroke="currentColor" d="M5 16.5A2.5 2.5 0 0 1 7.5 14H12v7H7.5A2.5 2.5 0 0 1 5 18.5v-2z" />
-            </svg>
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" 
+              alt="Figma icon" 
+              className="h-6 w-6"
+            />
           }
           label="Figma" 
           variant="secondary"
+          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
@@ -116,23 +129,28 @@ const SpecialiseGrid = () => {
         {/* Graphic Design */}
         <SkillIcon 
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="currentColor" d="M5 21h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2z" />
-              <path stroke="currentColor" d="M10 8v8" />
-              <path stroke="currentColor" d="M7 12h6" />
-              <path stroke="currentColor" d="M17 12h.01" />
-              <path stroke="currentColor" d="M17 8h.01" />
-              <path stroke="currentColor" d="M17 16h.01" />
-            </svg>
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968472.png" 
+              alt="Adobe Illustrator icon" 
+              className="h-6 w-6"
+            />
           }
           label="Illustrator" 
           variant="primary"
+          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
-          icon={<Palette />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" 
+              alt="Photoshop icon" 
+              className="h-6 w-6"
+            />
+          }
           label="Photoshop" 
           variant="primary"
+          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
