@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface ProjectCardProps {
   image: string;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
   slug: string;
   featured?: boolean;
   className?: string;
+  delay?: number;
 }
 
 interface TiltStyle {
@@ -23,11 +25,14 @@ const ProjectCard = ({
   category, 
   slug, 
   featured = false,
-  className 
+  className,
+  delay = 0
 }: ProjectCardProps) => {
   const [tiltStyle, setTiltStyle] = useState<TiltStyle>({
     transform: "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)",
   });
+  
+  const [cardRef, isVisible] = useScrollAnimation({ threshold: 0.1, delay });
 
   // Handle mouse movement for 3D tilt effect
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -60,10 +65,12 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "perspective-wrapper", 
+        "perspective-wrapper card-animate", 
         featured ? "md:col-span-2" : "",
         className
       )}
+      ref={cardRef as React.RefObject<HTMLDivElement>}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       <Link 
         to={`/portfolio/${slug}`} 

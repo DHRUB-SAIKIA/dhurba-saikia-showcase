@@ -1,6 +1,8 @@
 
 import Carousel from "@/components/shared/Carousel";
 import { Star } from "lucide-react";
+import AnimatedText from "@/components/shared/AnimatedText";
+import AnimatedCard from "@/components/shared/AnimatedCard";
 
 interface TestimonialProps {
   content: string;
@@ -9,11 +11,12 @@ interface TestimonialProps {
   company: string;
   image: string;
   rating?: number;
+  delay?: number;
 }
 
-const Testimonial = ({ content, author, position, company, image, rating = 5 }: TestimonialProps) => {
+const Testimonial = ({ content, author, position, company, image, rating = 5, delay = 0 }: TestimonialProps) => {
   return (
-    <div className="bg-card rounded-xl p-8 md:p-10 shadow-sm border border-border">
+    <AnimatedCard className="bg-card rounded-xl p-8 md:p-10 shadow-sm border border-border" delay={delay} hover={true}>
       <div className="flex mb-6">
         {Array.from({ length: rating }).map((_, i) => (
           <Star key={i} className="h-5 w-5 fill-yellow-400 stroke-yellow-400" />
@@ -33,7 +36,7 @@ const Testimonial = ({ content, author, position, company, image, rating = 5 }: 
           <p className="text-muted-foreground text-sm">{position}, {company}</p>
         </div>
       </div>
-    </div>
+    </AnimatedCard>
   );
 };
 
@@ -69,10 +72,12 @@ const Testimonials = () => {
     <section className="section-padding bg-muted/30">
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="heading-lg mb-4">Client Testimonials</h2>
-          <p className="text-muted-foreground">
+          <AnimatedText as="h2" className="heading-lg mb-4" delay={100}>
+            Client Testimonials
+          </AnimatedText>
+          <AnimatedText as="p" className="text-muted-foreground" delay={200}>
             Don't just take my word for it - hear what my clients have to say about working with me.
-          </p>
+          </AnimatedText>
         </div>
 
         <Carousel autoplay={true} interval={8000} className="max-w-4xl mx-auto">
@@ -85,6 +90,7 @@ const Testimonials = () => {
                 company={testimonial.company}
                 image={testimonial.image}
                 rating={testimonial.rating}
+                delay={100 * index}
               />
             </div>
           ))}

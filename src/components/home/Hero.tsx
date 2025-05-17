@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -6,6 +5,7 @@ import ParallaxSection from "@/components/shared/ParallaxSection";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { UserRound } from "lucide-react";
+import AnimatedText from "@/components/shared/AnimatedText";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -33,18 +33,20 @@ const Hero = () => {
     <section ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       <div className="container-custom z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div ref={textRef} className="order-2 lg:order-1 animate-slide-up">
-            <h1 className="heading-xl">
+          <div ref={textRef} className="order-2 lg:order-1">
+            <AnimatedText as="h1" className="heading-xl" animation="fade-up" delay={200}>
               <span className="text-primary-600">Design</span> &{" "}
               <span className="text-accent-500 relative inline-block">
                 Development
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
               </span> Solutions
-            </h1>
-            <p className="text-xl mt-6 text-muted-foreground max-w-xl">
+            </AnimatedText>
+            
+            <AnimatedText as="p" className="text-xl mt-6 text-muted-foreground max-w-xl" delay={400}>
               I'm Dhruba Saikia, a multidisciplinary designer and developer creating beautiful, functional digital experiences.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            </AnimatedText>
+            
+            <AnimatedText className="mt-8 flex flex-wrap gap-4" delay={600}>
               <HoverCard>
                 <HoverCardTrigger asChild>
                   <Button asChild size="lg" className="rounded-full px-8 hover-scale">
@@ -75,31 +77,32 @@ const Hero = () => {
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 hover-scale">
                 <Link to="/contact">Let's Talk</Link>
               </Button>
-            </div>
+            </AnimatedText>
             
-            <div className="mt-12">
+            <AnimatedText className="mt-12" delay={800}>
               <p className="text-sm font-medium text-muted-foreground mb-4">Trusted by</p>
               <div className="flex flex-wrap gap-8 items-center opacity-70">
-                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift">
+                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift stagger-item">
                   <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&auto=format&fit=crop" alt="Client logo" className="w-full" />
                 </div>
-                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift">
+                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift stagger-item">
                   <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&auto=format&fit=crop" alt="Client logo" className="w-full" />
                 </div>
-                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift">
+                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift stagger-item">
                   <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&auto=format&fit=crop" alt="Client logo" className="w-full" />
                 </div>
               </div>
-            </div>
+            </AnimatedText>
           </div>
           
           <div 
             ref={imageRef} 
-            className="order-1 lg:order-2 animate-fade-in flex justify-center"
+            className="order-1 lg:order-2 flex justify-center"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <div className="relative profile-container" style={{ width: '280px', height: '280px' }}>
+            <div className="relative profile-container animate-slide-up" style={{ width: '280px', height: '280px' }}>
+              {/* Profile image with effects - keep existing code unchanged */}
               {/* Background Glow Effect */}
               <div className="absolute inset-0 bg-primary-100 rounded-full blur-2xl opacity-40 animate-pulse"></div>
               <div className="absolute inset-2 bg-accent-100 rounded-full blur-xl opacity-30 animate-pulse" style={{animationDelay: '0.5s'}}></div>

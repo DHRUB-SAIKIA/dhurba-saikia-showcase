@@ -1,3 +1,4 @@
+
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
@@ -9,9 +10,13 @@ import { Link } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { useState } from "react";
+import AnimatedText from "@/components/shared/AnimatedText";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Index = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [contactSectionRef, isContactVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [profileRef, isProfileVisible] = useScrollAnimation({ threshold: 0.1, delay: 300 });
   
   return (
     <main>
@@ -23,46 +28,54 @@ const Index = () => {
       {/* Contact CTA Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="bg-primary-600 text-white rounded-3xl overflow-hidden">
+          <div 
+            className="bg-primary-600 text-white rounded-3xl overflow-hidden"
+            ref={contactSectionRef as React.RefObject<HTMLDivElement>}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-8 md:p-12 lg:p-16">
-                <h2 className="heading-lg mb-4">Let's Work Together</h2>
-                <p className="text-white/80 text-lg mb-8">
+                <AnimatedText as="h2" className="heading-lg mb-4" delay={100}>
+                  Let's Work Together
+                </AnimatedText>
+                <AnimatedText as="p" className="text-white/80 text-lg mb-8" delay={200}>
                   Have a project in mind? Let's discuss how we can bring your vision to life.
-                </p>
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
-                      <Link to="/contact" className="flex items-center">
-                        Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-80 p-0 overflow-hidden rounded-lg border-2 border-primary-200">
-                    <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4">
-                      <div className="flex items-center gap-3">
-                        <Avatar className="h-12 w-12 border-2 border-primary-200">
-                          <AvatarImage 
-                            src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
-                            alt="Dhruba Saikia" 
-                            className="object-cover"
-                          />
-                          <AvatarFallback>DS</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <h3 className="font-medium text-primary-800">Hey, I'm Dhruba!</h3>
-                          <p className="text-sm text-primary-600">How can I help you today?</p>
+                </AnimatedText>
+                <AnimatedText delay={300}>
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
+                        <Link to="/contact" className="flex items-center">
+                          Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 p-0 overflow-hidden rounded-lg border-2 border-primary-200">
+                      <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4">
+                        <div className="flex items-center gap-3">
+                          <Avatar className="h-12 w-12 border-2 border-primary-200">
+                            <AvatarImage 
+                              src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+                              alt="Dhruba Saikia" 
+                              className="object-cover"
+                            />
+                            <AvatarFallback>DS</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <h3 className="font-medium text-primary-800">Hey, I'm Dhruba!</h3>
+                            <p className="text-sm text-primary-600">How can I help you today?</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
+                    </HoverCardContent>
+                  </HoverCard>
+                </AnimatedText>
               </div>
               <div className="hidden lg:flex relative h-full items-center justify-center p-8">
                 <div 
                   className="relative z-10"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
+                  ref={profileRef as React.RefObject<HTMLDivElement>}
                 >
                   {/* Decorative Circles - Smaller versions for CTA section */}
                   <div className="absolute -top-6 -right-4 w-8 h-8 bg-primary-300/50 rounded-full opacity-70 animate-bounce" style={{animationDuration: '6s'}}></div>

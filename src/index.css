@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -268,6 +267,68 @@
       transform: translateY(0px);
     }
   }
+
+  /* Text Animation Classes */
+  .animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animate-text.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .text-reveal {
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .text-reveal span {
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .text-reveal.active span {
+    transform: translateY(0);
+  }
+  
+  /* Staggered Animation */
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .stagger-item.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Card Animation */
+  .card-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .card-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Card Hover Effect - Enhanced */
+  .card-hover {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
 }
 
 @layer utilities {
@@ -296,6 +357,61 @@
   
   .animate-slide-right {
     animation: slideRight 0.6s ease-out forwards;
+  }
+  
+  /* Enhanced Animation Utilities */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Delay utilities for staggered animations */
+  .delay-100 {
+    transition-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    transition-delay: 0.2s;
+  }
+  
+  .delay-300 {
+    transition-delay: 0.3s;
+  }
+  
+  .delay-400 {
+    transition-delay: 0.4s;
+  }
+  
+  .delay-500 {
+    transition-delay: 0.5s;
   }
 }
 

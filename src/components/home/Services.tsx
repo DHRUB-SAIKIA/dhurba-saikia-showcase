@@ -2,16 +2,24 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, PenTool, Smartphone, Palette, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnimatedCard from "@/components/shared/AnimatedCard";
+import AnimatedText from "@/components/shared/AnimatedText";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  delay: number;
 }
 
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, delay }: ServiceCardProps) => {
   return (
-    <div className="bg-card p-8 rounded-xl hover:shadow-lg transition-all duration-300 hover:translate-y-[-5px] border border-border">
+    <AnimatedCard 
+      className="bg-card p-8 rounded-xl hover:shadow-lg border border-border" 
+      delay={delay}
+      hover={true}
+      tilt={true}
+    >
       <div className="w-14 h-14 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-6 text-primary-600">
         {icon}
       </div>
@@ -20,7 +28,7 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
       <Link to="/services" className="inline-flex items-center text-primary-600 font-medium hover:underline">
         Learn more <ArrowRight className="ml-2 h-4 w-4" />
       </Link>
-    </div>
+    </AnimatedCard>
   );
 };
 
@@ -62,10 +70,12 @@ const Services = () => {
     <section className="section-padding bg-muted/30">
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="heading-lg mb-4">My Services</h2>
-          <p className="text-muted-foreground">
+          <AnimatedText as="h2" className="heading-lg mb-4" delay={100}>
+            My Services
+          </AnimatedText>
+          <AnimatedText as="p" className="text-muted-foreground" delay={200}>
             I offer a wide range of design and development services to help bring your vision to life.
-          </p>
+          </AnimatedText>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -74,15 +84,18 @@ const Services = () => {
               key={index} 
               icon={service.icon} 
               title={service.title} 
-              description={service.description} 
+              description={service.description}
+              delay={100 * (index + 1)}
             />
           ))}
         </div>
         
         <div className="mt-16 text-center">
-          <Button asChild size="lg" className="rounded-full px-8">
-            <Link to="/services">View All Services</Link>
-          </Button>
+          <AnimatedText delay={600}>
+            <Button asChild size="lg" className="rounded-full px-8">
+              <Link to="/services">View All Services</Link>
+            </Button>
+          </AnimatedText>
         </div>
       </div>
     </section>
