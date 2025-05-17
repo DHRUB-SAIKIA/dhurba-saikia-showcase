@@ -1,10 +1,16 @@
+
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ParallaxSection from "@/components/shared/ParallaxSection";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { UserRound } from "lucide-react";
+import { 
+  Html, Css, Javascript, React as ReactIcon, 
+  Flutter, Swift, Kotlin,
+  Figma, Sketch,
+  AdobeIllustrator, Photoshop, CorelDraw
+} from "lucide-react";
 import AnimatedText from "@/components/shared/AnimatedText";
 
 const Hero = () => {
@@ -80,16 +86,103 @@ const Hero = () => {
             </AnimatedText>
             
             <AnimatedText className="mt-12" delay={800}>
-              <p className="text-sm font-medium text-muted-foreground mb-4">Trusted by</p>
-              <div className="flex flex-wrap gap-8 items-center opacity-70">
-                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift stagger-item">
-                  <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&auto=format&fit=crop" alt="Client logo" className="w-full" />
+              <p className="text-sm font-medium text-muted-foreground mb-4">Specialise at</p>
+              <div className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-6 mt-2">
+                {/* Web Development */}
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <Html className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">HTML</span>
                 </div>
-                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift stagger-item">
-                  <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&auto=format&fit=crop" alt="Client logo" className="w-full" />
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <Css className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">CSS</span>
                 </div>
-                <div className="w-24 grayscale hover:grayscale-0 transition-all hover-lift stagger-item">
-                  <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&auto=format&fit=crop" alt="Client logo" className="w-full" />
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <Javascript className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">JavaScript</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <ReactIcon className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">React</span>
+                </div>
+                
+                {/* App Development */}
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-accent-100 rounded-lg mb-2 shadow-sm">
+                    <Flutter className="h-6 w-6 text-accent-500" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Flutter</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-accent-100 rounded-lg mb-2 shadow-sm">
+                    <Swift className="h-6 w-6 text-accent-500" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Swift</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-accent-100 rounded-lg mb-2 shadow-sm">
+                    <Kotlin className="h-6 w-6 text-accent-500" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Kotlin</span>
+                </div>
+                
+                {/* UI/UX Design */}
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-secondary-100 rounded-lg mb-2 shadow-sm">
+                    <Figma className="h-6 w-6 text-secondary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Figma</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-secondary-100 rounded-lg mb-2 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-secondary-600">
+                      <path d="M16.5 6.5h.5m-8.5 11h3m-3-14h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z" />
+                    </svg>
+                  </div>
+                  <span className="text-xs text-muted-foreground">Adobe XD</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-secondary-100 rounded-lg mb-2 shadow-sm">
+                    <Sketch className="h-6 w-6 text-secondary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Sketch</span>
+                </div>
+                
+                {/* Graphic Design */}
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <AdobeIllustrator className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Illustrator</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <Photoshop className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Photoshop</span>
+                </div>
+                
+                <div className="flex flex-col items-center stagger-item hover-lift">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary-100 rounded-lg mb-2 shadow-sm">
+                    <CorelDraw className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">CorelDRAW</span>
                 </div>
               </div>
             </AnimatedText>
