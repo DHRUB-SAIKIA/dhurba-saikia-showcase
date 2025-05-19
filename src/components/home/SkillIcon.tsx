@@ -26,9 +26,11 @@ const SkillIcon = ({ icon, label, variant = 'primary', iconClassName }: SkillIco
   return (
     <div className="flex flex-col items-center stagger-item hover-lift">
       <div className={`h-12 w-12 flex items-center justify-center ${bgColorClass} rounded-lg mb-2 shadow-sm`}>
-        <div className={`${iconClassName || `h-6 w-6 ${textColorClass}`}`}>{icon}</div>
+        <div className={`${textColorClass} flex items-center justify-center`}>
+          {icon}
+        </div>
       </div>
-      <span className="text-xs text-muted-foreground">{label}</span>
+      <span className="text-xs text-muted-foreground font-medium">{label}</span>
     </div>
   );
 };

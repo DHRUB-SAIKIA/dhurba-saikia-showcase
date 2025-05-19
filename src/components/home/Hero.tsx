@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import HeroContent from "./HeroContent";
 import ProfileImage from "./ProfileImage";
 import HeroBackground from "./HeroBackground";
+import SpecialiseGrid from "./SpecialiseGrid";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div ref={textRef} className="order-2 lg:order-1">
             <HeroContent />
+            <SpecialiseGrid />
           </div>
           
           <div 

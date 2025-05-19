@@ -19,7 +19,6 @@ const SpecialiseGrid = () => {
           }
           label="HTML" 
           variant="primary"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
@@ -32,7 +31,6 @@ const SpecialiseGrid = () => {
           }
           label="CSS" 
           variant="primary"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
@@ -45,7 +43,6 @@ const SpecialiseGrid = () => {
           }
           label="JavaScript" 
           variant="primary"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
@@ -58,7 +55,6 @@ const SpecialiseGrid = () => {
           }
           label="React" 
           variant="primary"
-          iconClassName="h-6 w-6"
         />
         
         {/* App Development */}
@@ -72,26 +68,16 @@ const SpecialiseGrid = () => {
           }
           label="Flutter" 
           variant="accent"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
-          icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="currentColor" d="M10 20.777a8.942 8.942 0 0 1-2.48-.969" />
-              <path stroke="currentColor" d="M14 3.223a9.003 9.003 0 0 1 0 17.554" />
-              <path stroke="currentColor" d="M4.579 17.093a8.961 8.961 0 0 1-1.227-2.592" />
-              <path stroke="currentColor" d="M3.124 10.5c.16-.95.468-1.85.9-2.675l.169-.305" />
-              <path stroke="currentColor" d="M6.907 4.579A8.954 8.954 0 0 1 10 3.223" />
-              <circle stroke="currentColor" cx="12" cy="12" r="1" />
-            </svg>
-          }
+          icon={<Smartphone className="h-6 w-6" />}
           label="Swift" 
           variant="accent"
         />
         
         <SkillIcon 
-          icon={<Smartphone />}
+          icon={<Smartphone className="h-6 w-6" />}
           label="Kotlin" 
           variant="accent"
         />
@@ -107,21 +93,16 @@ const SpecialiseGrid = () => {
           }
           label="Figma" 
           variant="secondary"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
-          icon={
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="currentColor" d="M16.5 6.5h.5m-8.5 11h3m-3-14h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z" />
-            </svg>
-          }
+          icon={<Monitor className="h-6 w-6" />}
           label="Adobe XD" 
           variant="secondary"
         />
         
         <SkillIcon 
-          icon={<Monitor />}
+          icon={<Monitor className="h-6 w-6" />}
           label="Sketch" 
           variant="secondary"
         />
@@ -137,7 +118,6 @@ const SpecialiseGrid = () => {
           }
           label="Illustrator" 
           variant="primary"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
@@ -150,11 +130,10 @@ const SpecialiseGrid = () => {
           }
           label="Photoshop" 
           variant="primary"
-          iconClassName="h-6 w-6"
         />
         
         <SkillIcon 
-          icon={<Brush />}
+          icon={<Brush className="h-6 w-6" />}
           label="CorelDRAW" 
           variant="primary"
         />
