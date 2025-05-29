@@ -3,169 +3,85 @@ import SkillIcon from "./SkillIcon";
 import AnimatedText from "@/components/shared/AnimatedText";
 
 const SpecialiseGrid = () => {
+  const skills = [
+    {
+      icon: "/lovable-uploads/f21d10fb-abff-42b3-aa53-f86b4aab2cd6.png",
+      label: "HTML",
+      alt: "HTML icon"
+    },
+    {
+      icon: "/lovable-uploads/78432b35-c678-45cf-bb58-3042d439dd5f.png",
+      label: "CSS",
+      alt: "CSS icon"
+    },
+    {
+      icon: "/lovable-uploads/baf18928-6857-4b09-b124-fee5ffd53046.png",
+      label: "JavaScript",
+      alt: "JavaScript icon"
+    },
+    {
+      icon: "/lovable-uploads/67df72dd-ea89-4cb7-83c8-4f99d937920f.png",
+      label: "React",
+      alt: "React icon"
+    },
+    {
+      icon: "/lovable-uploads/8f366afe-9b23-4263-9c11-f1314756baa7.png",
+      label: "Node.js",
+      alt: "Node.js icon"
+    },
+    {
+      icon: "/lovable-uploads/b8e13655-c3e2-48cb-8079-b17c63c0b946.png",
+      label: "Express.js",
+      alt: "Express.js icon"
+    },
+    {
+      icon: "/lovable-uploads/0e52dee5-a859-4d0d-b19a-573cb9c39d53.png",
+      label: "MongoDB",
+      alt: "MongoDB icon"
+    },
+    {
+      icon: "/lovable-uploads/89e94ff8-414d-4cef-953e-0dec6f83cd20.png",
+      label: "Git",
+      alt: "Git icon"
+    },
+    {
+      icon: "/lovable-uploads/2540f1a1-100c-4fe0-80cf-61fad025fac4.png",
+      label: "Figma",
+      alt: "Figma icon"
+    },
+    {
+      icon: "/lovable-uploads/38238a00-d7b9-4b0d-a5eb-f56609084389.png",
+      label: "Adobe Photoshop",
+      alt: "Adobe Photoshop icon"
+    }
+  ];
+
+  // Duplicate the skills array for seamless infinite scroll
+  const duplicatedSkills = [...skills, ...skills];
+
   return (
     <AnimatedText className="mt-12" delay={800}>
       <p className="text-sm font-medium text-muted-foreground mb-4">Specialise at</p>
-      <div className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-6 mt-2">
-        {/* Web Development */}
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" 
-              alt="HTML icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="HTML" 
-          variant="primary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/732/732190.png" 
-              alt="CSS icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="CSS" 
-          variant="primary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" 
-              alt="JavaScript icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="JavaScript" 
-          variant="primary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" 
-              alt="React icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="React" 
-          variant="primary"
-        />
-        
-        {/* App Development */}
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://storage.googleapis.com/cms-storage-bucket/a9d6ce81aee44ae017ee.png" 
-              alt="Flutter icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Flutter" 
-          variant="accent"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/732/732211.png" 
-              alt="Swift icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Swift" 
-          variant="accent"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5969/5969346.png" 
-              alt="Kotlin icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Kotlin" 
-          variant="accent"
-        />
-        
-        {/* UI/UX Design */}
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" 
-              alt="Figma icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Figma" 
-          variant="secondary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5611/5611129.png" 
-              alt="Adobe XD icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Adobe XD" 
-          variant="secondary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968770.png" 
-              alt="Sketch icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Sketch" 
-          variant="secondary"
-        />
-        
-        {/* Graphic Design */}
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968472.png" 
-              alt="Adobe Illustrator icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Illustrator" 
-          variant="primary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" 
-              alt="Photoshop icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="Photoshop" 
-          variant="primary"
-        />
-        
-        <SkillIcon 
-          icon={
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/2546/2546035.png" 
-              alt="CorelDRAW icon" 
-              className="h-6 w-6"
-            />
-          }
-          label="CorelDRAW" 
-          variant="primary"
-        />
+      
+      {/* Infinite scroll container */}
+      <div className="relative overflow-hidden">
+        <div className="flex animate-scroll space-x-6">
+          {duplicatedSkills.map((skill, index) => (
+            <div key={index} className="flex-shrink-0">
+              <SkillIcon 
+                icon={
+                  <img 
+                    src={skill.icon} 
+                    alt={skill.alt} 
+                    className="h-6 w-6 object-contain"
+                  />
+                }
+                label={skill.label} 
+                variant={index % 3 === 0 ? "primary" : index % 3 === 1 ? "secondary" : "accent"}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </AnimatedText>
   );
