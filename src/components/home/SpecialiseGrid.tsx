@@ -60,14 +60,14 @@ const SpecialiseGrid = () => {
   const duplicatedSkills = [...skills, ...skills];
 
   return (
-    <AnimatedText className="mt-12" delay={800}>
-      <p className="text-sm font-medium text-muted-foreground mb-4">Specialise at</p>
+    <AnimatedText className="mt-12 w-full" delay={800}>
+      <p className="text-sm font-medium text-muted-foreground mb-6">Specialise at</p>
       
-      {/* Infinite scroll container */}
-      <div className="relative overflow-hidden">
-        <div className="flex animate-scroll space-x-6">
+      {/* Infinite scroll container with proper overflow and width */}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex animate-scroll gap-8 w-max">
           {duplicatedSkills.map((skill, index) => (
-            <div key={index} className="flex-shrink-0">
+            <div key={`${skill.label}-${index}`} className="flex-shrink-0">
               <SkillIcon 
                 icon={
                   <img 

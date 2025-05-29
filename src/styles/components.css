@@ -1,0 +1,122 @@
+
+@layer components {
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+  
+  .heading-sm {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Profile Image Styles */
+  .profile-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .profile-image-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(155, 135, 245, 0.3), transparent);
+    pointer-events: none;
+  }
+
+  /* 3D Element Effects */
+  .card-3d {
+    @apply transition-transform duration-300 perspective-1000 transform-gpu;
+  }
+
+  .card-3d:hover {
+    @apply transform-gpu scale-105;
+  }
+
+  /* Hover Reveal Effect */
+  .hover-reveal {
+    @apply relative overflow-hidden;
+  }
+
+  .hover-reveal-content {
+    @apply absolute inset-0 flex items-center justify-center bg-black/50 text-white opacity-0 transition-all duration-300;
+  }
+
+  .hover-reveal:hover .hover-reveal-content {
+    @apply opacity-100;
+  }
+
+  /* Subtle Drop Shadows */
+  .shadow-custom {
+    @apply shadow-lg;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-custom-hover:hover {
+    box-shadow: 0 15px 40px -15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Enhanced Parallax Effect */
+  .parallax-container {
+    @apply overflow-hidden relative;
+  }
+
+  .parallax-bg {
+    @apply absolute inset-0 w-full h-[120%] -top-[10%];
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Depth Effects */
+  .depth-layer-1 {
+    @apply relative z-10;
+    transform: translateZ(50px);
+  }
+
+  .depth-layer-2 {
+    @apply relative z-20;
+    transform: translateZ(100px);
+  }
+
+  .depth-layer-3 {
+    @apply relative z-30;
+    transform: translateZ(150px);
+  }
+
+  /* Background Fade Effect */
+  .bg-fade {
+    @apply relative;
+    background: linear-gradient(to bottom, transparent, var(--background) 90%);
+  }
+
+  /* Back to Top Button */
+  .back-to-top {
+    @apply fixed bottom-6 right-6 bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 transition-all duration-300;
+    visibility: hidden;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Perspective wrapper for 3D effects */
+  .perspective-wrapper {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+}
