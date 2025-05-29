@@ -45,10 +45,10 @@ const ProfileImage = () => {
           </div>
         )}
         
-        {/* Profile Image - Fixed for perfect centering */}
+        {/* Profile Image - Updated with new image */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <img 
-            src="/lovable-uploads/af01a282-9f2a-4125-84a4-c7f2e0a7956c.png" 
+            src="/lovable-uploads/32e8542a-929d-4640-868e-f070ddf32bc0.png" 
             alt="Dhruba Saikia - Designer and Developer" 
             className="w-full h-full object-cover"
           />
