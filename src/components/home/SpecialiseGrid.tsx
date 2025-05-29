@@ -70,13 +70,25 @@ const SpecialiseGrid = () => {
         />
         
         <SkillIcon 
-          icon={<img src="https://cdn-icons-png.flaticon.com/512/732/732211.png" alt="Swift icon" className="h-6 w-6" />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/732/732211.png" 
+              alt="Swift icon" 
+              className="h-6 w-6"
+            />
+          }
           label="Swift" 
           variant="accent"
         />
         
         <SkillIcon 
-          icon={<img src="https://cdn-icons-png.flaticon.com/512/5969/5969346.png" alt="Kotlin icon" className="h-6 w-6" />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5969/5969346.png" 
+              alt="Kotlin icon" 
+              className="h-6 w-6"
+            />
+          }
           label="Kotlin" 
           variant="accent"
         />
@@ -95,13 +107,25 @@ const SpecialiseGrid = () => {
         />
         
         <SkillIcon 
-          icon={<img src="https://cdn-icons-png.flaticon.com/512/5611/5611129.png" alt="Adobe XD icon" className="h-6 w-6" />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5611/5611129.png" 
+              alt="Adobe XD icon" 
+              className="h-6 w-6"
+            />
+          }
           label="Adobe XD" 
           variant="secondary"
         />
         
         <SkillIcon 
-          icon={<img src="https://cdn-icons-png.flaticon.com/512/5968/5968770.png" alt="Sketch icon" className="h-6 w-6" />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968770.png" 
+              alt="Sketch icon" 
+              className="h-6 w-6"
+            />
+          }
           label="Sketch" 
           variant="secondary"
         />
@@ -132,7 +156,13 @@ const SpecialiseGrid = () => {
         />
         
         <SkillIcon 
-          icon={<img src="https://cdn-icons-png.flaticon.com/512/2546/2546035.png" alt="CorelDRAW icon" className="h-6 w-6" />}
+          icon={
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/2546/2546035.png" 
+              alt="CorelDRAW icon" 
+              className="h-6 w-6"
+            />
+          }
           label="CorelDRAW" 
           variant="primary"
         />
