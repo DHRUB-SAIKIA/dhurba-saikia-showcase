@@ -97,6 +97,28 @@
   .hover-lift:hover {
     @apply -translate-y-1;
   }
+
+  /* Infinite Scroll Animation Classes */
+  .infinite-scroll-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .infinite-scroll-track {
+    display: flex;
+    width: calc(100% * 3); /* 3x width for 3 sets of items */
+    animation: scroll-horizontal 25s linear infinite;
+  }
+
+  .infinite-scroll-track:hover {
+    animation-play-state: paused;
+  }
+
+  .scroll-item {
+    flex-shrink: 0;
+    display: inline-flex;
+  }
 }
 
 /* 3D Animation Keyframes */
@@ -112,23 +134,14 @@
   }
 }
 
-/* Infinite Scroll Animation */
-@keyframes infinite-scroll {
+/* Pure CSS Infinite Scroll Keyframes */
+@keyframes scroll-horizontal {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(calc(-100% / 3));
   }
-}
-
-.animate-infinite-scroll {
-  animation: infinite-scroll 20s linear infinite;
-  width: max-content;
-}
-
-.animate-infinite-scroll:hover {
-  animation-play-state: paused;
 }
 
 @keyframes fadeIn {

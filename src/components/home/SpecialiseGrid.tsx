@@ -65,11 +65,11 @@ const SpecialiseGrid = () => {
         Specialise at
       </AnimatedText>
       
-      {/* Infinite scroll container */}
-      <div className="relative w-full overflow-hidden">
-        <div className="flex gap-6 animate-infinite-scroll whitespace-nowrap">
+      {/* Infinite scroll container using pure CSS */}
+      <div className="infinite-scroll-container">
+        <div className="infinite-scroll-track gap-6">
           {duplicatedSkills.map((skill, index) => (
-            <div key={`${skill.label}-${index}`} className="flex-shrink-0 inline-block">
+            <div key={`${skill.label}-${index}`} className="scroll-item px-3">
               <SkillIcon 
                 icon={
                   <img 
@@ -86,8 +86,8 @@ const SpecialiseGrid = () => {
         </div>
         
         {/* Fade out edges */}
-        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
       </div>
     </div>
   );
