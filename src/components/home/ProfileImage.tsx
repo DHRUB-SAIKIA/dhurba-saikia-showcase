@@ -45,12 +45,12 @@ const ProfileImage = () => {
           </div>
         )}
         
-        {/* Profile Image - Normal size (1x scale) */}
+        {/* Profile Image - Zoomed in (2x scale) */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <img 
             src="/lovable-uploads/32e8542a-929d-4640-868e-f070ddf32bc0.png" 
             alt="Dhruba Saikia - Designer and Developer" 
-            className="w-full h-full object-cover scale-100"
+            className="w-full h-full object-cover scale-200"
             style={{ objectPosition: 'center 60%' }}
           />
         </div>
