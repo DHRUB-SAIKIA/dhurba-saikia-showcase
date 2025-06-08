@@ -97,24 +97,6 @@
   .hover-lift:hover {
     @apply -translate-y-1;
   }
-
-  /* Mask gradient for infinite scroll */
-  .mask-gradient {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 10%,
-      black 90%,
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 10%,
-      black 90%,
-      transparent 100%
-    );
-  }
 }
 
 /* 3D Animation Keyframes */
@@ -130,7 +112,7 @@
   }
 }
 
-/* Infinite Scroll Animation - Fixed */
+/* Infinite Scroll Animation */
 @keyframes infinite-scroll {
   0% {
     transform: translateX(0);
@@ -141,28 +123,11 @@
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 30s linear infinite;
+  animation: infinite-scroll 20s linear infinite;
+  width: max-content;
 }
 
 .animate-infinite-scroll:hover {
-  animation-play-state: paused;
-}
-
-/* Legacy scroll animation - keeping for compatibility */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-.animate-scroll:hover {
   animation-play-state: paused;
 }
 

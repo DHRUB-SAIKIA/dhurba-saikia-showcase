@@ -60,20 +60,16 @@ const SpecialiseGrid = () => {
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <AnimatedText className="mt-12 w-full" delay={800}>
-      <p className="text-sm font-medium text-muted-foreground mb-6">Specialise at</p>
+    <div className="mt-12 w-full">
+      <AnimatedText as="p" className="text-sm font-medium text-muted-foreground mb-6" delay={800}>
+        Specialise at
+      </AnimatedText>
       
       {/* Infinite scroll container */}
-      <div className="relative w-full overflow-hidden mask-gradient">
-        <div 
-          className="flex gap-6 animate-infinite-scroll"
-          style={{ 
-            width: 'max-content',
-            animation: 'infinite-scroll 30s linear infinite'
-          }}
-        >
+      <div className="relative w-full overflow-hidden">
+        <div className="flex gap-6 animate-infinite-scroll whitespace-nowrap">
           {duplicatedSkills.map((skill, index) => (
-            <div key={`${skill.label}-${index}`} className="flex-shrink-0">
+            <div key={`${skill.label}-${index}`} className="flex-shrink-0 inline-block">
               <SkillIcon 
                 icon={
                   <img 
@@ -88,8 +84,12 @@ const SpecialiseGrid = () => {
             </div>
           ))}
         </div>
+        
+        {/* Fade out edges */}
+        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
       </div>
-    </AnimatedText>
+    </div>
   );
 };
 
