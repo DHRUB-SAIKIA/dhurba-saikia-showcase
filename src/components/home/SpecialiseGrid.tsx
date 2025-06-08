@@ -56,16 +56,22 @@ const SpecialiseGrid = () => {
     }
   ];
 
-  // Duplicate the skills array for seamless infinite scroll
-  const duplicatedSkills = [...skills, ...skills];
+  // Triple the skills array for seamless infinite scroll
+  const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
     <AnimatedText className="mt-12 w-full" delay={800}>
       <p className="text-sm font-medium text-muted-foreground mb-6">Specialise at</p>
       
-      {/* Infinite scroll container with proper overflow and width */}
-      <div className="relative w-full overflow-hidden">
-        <div className="flex animate-scroll gap-8 w-max">
+      {/* Infinite scroll container */}
+      <div className="relative w-full overflow-hidden mask-gradient">
+        <div 
+          className="flex gap-6 animate-infinite-scroll"
+          style={{ 
+            width: 'max-content',
+            animation: 'infinite-scroll 30s linear infinite'
+          }}
+        >
           {duplicatedSkills.map((skill, index) => (
             <div key={`${skill.label}-${index}`} className="flex-shrink-0">
               <SkillIcon 
